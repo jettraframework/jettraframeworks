@@ -13,10 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Permite a JitPack o a proyectos hijos reutilizar la versión exacta -->
         <jettra.version>${project.version}</jettra.version>
-<!--        <jettra.annotation.version>1.0.0-SNAPSHOT</jettra.annotation.version>
-        <jettra.json.version>1.0.0-SNAPSHOT</jettra.json.version>
-        <jettra.test.version>1.0.0-SNAPSHOT</jettra.test.version>
-        <jettra.rules.version>1.0.0-SNAPSHOT</jettra.rules.version>-->
+
     </properties>
     
     <modules>

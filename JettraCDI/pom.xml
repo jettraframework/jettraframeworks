@@ -4,33 +4,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.jettra</groupId>
+
+<!-- 1. Herencia del Proyecto Maestro -->
+    <parent>
+        <groupId>io.jettra</groupId>
+        <artifactId>jettraframeworks</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!-- 2. Identificador del Submódulo -->
+    <artifactId>JettraCDI</artifactId>
+    <packaging>jar</packaging>
+   <name>JettraCDI</name>
+    <description>Contenedor de Inyección de Dependencias (CDI) ultra-ligero y de alto rendimiento para el ecosistema Jettra, sin dependencias de Jakarta EE o Eclipse MicroProfile.</description>
+
+    
+<!--    <groupId>io.jettra</groupId>
     <artifactId>JettraCDI</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>JettraCDI</name>
-    <description>Contenedor de Inyección de Dependencias (CDI) ultra-ligero y de alto rendimiento para el ecosistema Jettra, sin dependencias de Jakarta EE o Eclipse MicroProfile.</description>
+    <description>Contenedor de Inyección de Dependencias (CDI) ultra-ligero y de alto rendimiento para el ecosistema Jettra, sin dependencias de Jakarta EE o Eclipse MicroProfile.</description>-->
 
-    <properties>
+<!--    <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jettra.annotation.version>1.0.0-SNAPSHOT</jettra.annotation.version>
         <jettra.json.version>1.0.0-SNAPSHOT</jettra.json.version>
-    </properties>
+    </properties>-->
 
     <dependencies>
         <dependency>
             <groupId>io.jettra</groupId>
             <artifactId>JettraAnnotation</artifactId>
-            <version>${jettra.annotation.version}</version>
+            <!--<version>${jettra.annotation.version}</version>-->
                  <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.jettra</groupId>
             <artifactId>JettraJSON</artifactId>
-            <version>${jettra.json.version}</version>
+            <!--<version>${jettra.json.version}</version>-->
             <scope>provided</scope>
         </dependency>
     </dependencies>

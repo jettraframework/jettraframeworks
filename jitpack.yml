@@ -1,0 +1,19 @@
+#jdk:
+#  - openjdk25
+#install:
+#  - mvn clean install -DskipTests
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y wget apt-transport-https gnupg
+  # Descargar e instalar Liberica JDK 25 de BellSoft
+  - wget -q https://download.bell-sw.com/java/25+37/bellsoft-jdk25+37-linux-amd64.deb -O liberica-jdk.deb || wget -q https://download.bell-sw.com/java/25/bellsoft-jdk25-linux-amd64.deb -O liberica-jdk.deb
+  - sudo dpkg -i liberica-jdk.deb || sudo apt-get install -f -y
+  # Establecer JAVA_HOME y actualizar alternativas
+  - export JAVA_HOME=$(ls -d /usr/lib/jvm/bellsoft-java25* 2>/dev/null || ls -d /usr/lib/jvm/*liberica* 2>/dev/null)
+  - export PATH=$JAVA_HOME/bin:$PATH
+  # Validar versión en el log de JitPack
+  - java -version
+
+install:
+  - mvn clean install -DskipTests

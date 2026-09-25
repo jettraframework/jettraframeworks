@@ -1,5 +1,10 @@
-jdk:
-  - openjdk25
+before_install:
+  - curl -s https://download.java.net/java/early_access/jdk25/12/GPL/openjdk-25-ea+12_linux-x64_bin.tar.gz -o /tmp/jdk25.tar.gz || curl -s https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.tar.gz -o /tmp/jdk25.tar.gz
+  - mkdir -p /tmp/jdk-25 && tar -xzf /tmp/jdk25.tar.gz -C /tmp/jdk-25 --strip-components=1
+  - export JAVA_HOME=/tmp/jdk-25
+  - export PATH=$JAVA_HOME/bin:$PATH
+  - java -version
+
 install:
   - mvn clean install -DskipTests
 

@@ -305,4 +305,5 @@ public class JettraCDI {
         namedBeans.clear();
         JettraContext.clearAll();
     }
+    
 }

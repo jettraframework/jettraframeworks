@@ -16,8 +16,8 @@
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jettra.annotation.version>1.0.0</jettra.annotation.version>
-        <jettra.json.version>1.0.0</jettra.json.version>
+        <jettra.annotation.version>1.0.0-SNAPSHOT</jettra.annotation.version>
+        <jettra.json.version>1.0.0-SNAPSHOT</jettra.json.version>
     </properties>
 
     <dependencies>
@@ -25,6 +25,7 @@
             <groupId>io.jettra</groupId>
             <artifactId>JettraAnnotation</artifactId>
             <version>${jettra.annotation.version}</version>
+                 <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.jettra</groupId>

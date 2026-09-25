@@ -1,6 +1,11 @@
+jdk:
+  - openjdk25
 install:
-  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk install java 25-open || sdk install java 25-librca
-  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk use java 25-open && mvn clean install -DskipTests
+  - mvn clean install -DskipTests
+
+#install:
+#  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk install java 25-open || sdk install java 25-librca
+#  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk use java 25-open && mvn clean install -DskipTests
 #before_install:
 #  # Descargar el binario portable tar.gz de BellSoft Liberica JDK 25 (Standard x86_64)
 #  - curl -sL https://download.bell-sw.com/java/25/bellsoft-jdk25-linux-amd64.tar.gz -o liberica-jdk25.tar.gz || curl -sL https://download.bell-sw.com/java/25+37/bellsoft-jdk25+37-linux-amd64.tar.gz -o liberica-jdk25.tar.gz

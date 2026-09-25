@@ -4,6 +4,7 @@
 
 Concebido como una alternativa minimalista para ambientes con recursos moderados, JettraServer proporciona una plataforma base ágil para manejar comunicación REST y gRPC. Adicionalmente, cuenta con estrecha compatibilidad con la librería de cliente ligero **JettraUI**.
 
+
 ---
 
 ## ⚙️ Configuración del Puerto del Servidor

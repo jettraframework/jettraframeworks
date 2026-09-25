@@ -1,0 +1,5 @@
+io/jettra/cdi/context/JettraContext$Scope.class
+io/jettra/cdi/context/JettraContext.class
+io/jettra/cdi/config/JettraConfig.class
+io/jettra/cdi/JettraCDI.class
+io/jettra/cdi/config/ConfigInjector.class

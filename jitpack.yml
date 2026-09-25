@@ -1,16 +1,19 @@
-before_install:
-  # Descargar el binario portable tar.gz de BellSoft Liberica JDK 25 (Standard x86_64)
-  - curl -sL https://download.bell-sw.com/java/25/bellsoft-jdk25-linux-amd64.tar.gz -o liberica-jdk25.tar.gz || curl -sL https://download.bell-sw.com/java/25+37/bellsoft-jdk25+37-linux-amd64.tar.gz -o liberica-jdk25.tar.gz
-  - mkdir -p /home/jitpack/liberica-25
-  - tar -xzf liberica-jdk25.tar.gz -C /home/jitpack/liberica-25 --strip-components=1
-  # Exportar variables de entorno para que Maven use el nuevo JDK
-  - export JAVA_HOME=/home/jitpack/liberica-25
-  - export PATH=$JAVA_HOME/bin:$PATH
-  # Validar que JitPack detecte Liberica 25
-  - java -version
-
 install:
-  - mvn clean install -DskipTests
+  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk install java 25-open || sdk install java 25-librca
+  - source /home/jitpack/.sdkman/bin/sdkman-init.sh && sdk use java 25-open && mvn clean install -DskipTests
+#before_install:
+#  # Descargar el binario portable tar.gz de BellSoft Liberica JDK 25 (Standard x86_64)
+#  - curl -sL https://download.bell-sw.com/java/25/bellsoft-jdk25-linux-amd64.tar.gz -o liberica-jdk25.tar.gz || curl -sL https://download.bell-sw.com/java/25+37/bellsoft-jdk25+37-linux-amd64.tar.gz -o liberica-jdk25.tar.gz
+#  - mkdir -p /home/jitpack/liberica-25
+#  - tar -xzf liberica-jdk25.tar.gz -C /home/jitpack/liberica-25 --strip-components=1
+#  # Exportar variables de entorno para que Maven use el nuevo JDK
+#  - export JAVA_HOME=/home/jitpack/liberica-25
+#  - export PATH=$JAVA_HOME/bin:$PATH
+#  # Validar que JitPack detecte Liberica 25
+#  - java -version
+#
+#install:
+#  - mvn clean install -DskipTests
 
 #jdk:
 #  - openjdk25
